@@ -12,13 +12,18 @@ services:
     environment:
       DB_FILTER: "^prod"
       DOODBA_ENVIRONMENT: "${DOODBA_ENVIRONMENT-prod}"
-      INITIAL_LANG: "en_US"
+      INITIAL_LANG: "fr_CH"
       ODOO_BUS_PUBLIC_SAMESITE_WS: 1
       PGHOST: rumont-odoo-18-0-prod-db
     depends_on:
       - db
+    volumes:
+      - /data/database/odoo:/backup
     networks:
       default:
+    ports:
+      - "18069:8069"
+      - "18072:8072"
     labels:
       doodba.domain.main: ""
 
