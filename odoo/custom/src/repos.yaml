@@ -4,13 +4,15 @@
     # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
     # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
     # for a sane value of 100 commits)
-    depth: $DEPTH_DEFAULT
+    depth: 100
   remotes:
     ocb: https://github.com/OCA/OCB.git
     odoo: https://github.com/odoo/odoo.git
     openupgrade: https://github.com/OCA/OpenUpgrade.git
+    jguenat: https://github.com/jguenat/OCB.git
   target: ocb $ODOO_VERSION
   merges:
     - ocb $ODOO_VERSION
+    - jguenat 18.0-imp-mail_group-archive-order-by-date-desc
     # Example of a merge of the PR with the number <PR>
     # - oca refs/pull/<PR>/head
